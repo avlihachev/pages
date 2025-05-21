@@ -1,60 +1,80 @@
 # Build and deploy Hugo site to GitHub Pages
-
 name: Deploy Hugo site to GitHub Pages
 
 on:
   push:
-    branches: ["master"] # or "main", if your default branch is main
-  workflow_dispatch:
+    branches:
+      - master # Or "main", if your default branch is main
+  workflow_dispatch: # Allows manual triggering
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Allow only one concurrent deployment, cancel older runs
+# This is important to prevent race conditions.
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.147.3
+      HUGO_ENVIRONMENT: production
+      HUGO_ENV: production
+      # NODE_VERSION: '18' # Uncomment if your project uses Node.js for asset processing
 
     steps:
       - name: Checkout source code
         uses: actions/checkout@v4
         with:
-          submodules: recursive
+          submodules: recursive # Fetches theme if it's a submodule
+          fetch-depth: 0 # Fetches all history for .GitInfo and .Lastmod
 
-      - name: Install Hugo CLI
-        run: |
-          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb
-          sudo dpkg -i ${{ runner.temp }}/hugo.deb
+      # Uncomment and configure if your project uses Node.js for asset processing (e.g., TailwindCSS, PostCSS)
+      # - name: Set up Node.js
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: ${{ env.NODE_VERSION }}
+      #     cache: 'npm' # or 'yarn'
 
-      - name: Install Dart Sass Embedded
-        run: sudo snap install dart-sass-embedded
+      # - name: Install Node.js dependencies
+      #   run: |
+      #     if [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then
+      #       npm ci
+      #     elif [ -f yarn.lock ]; then
+      #       yarn install --frozen-lockfile
+      #     elif [ -f package.json ]; then
+      #       npm install
+      #     else
+      #       echo "No Node.js dependency lock file found. Skipping npm/yarn install."
+      #     fi
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3 # Uses the latest v3.x release of this action
+        with:
+          hugo-version: "latest" # Specify your desired Hugo version here, or 'latest'
+          extended: true # Most themes require the extended version for SASS/SCSS support
+
+      # Optional: Install Dart Sass Embedded if your theme requires it and it's not handled by Hugo's embedded Dart Sass
+      # Hugo versions >= 0.110.0 (approximately) bundle Dart Sass.
+      # This step is likely NOT needed with recent Hugo versions unless your theme has very specific requirements.
+      # - name: Install Dart Sass Embedded
+      #   run: sudo snap install dart-sass-embedded
 
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v4
-
-      - name: Install Node.js dependencies (optional)
-        run: |
-          if [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then
-            npm ci
-          fi
+        uses: actions/configure-pages@v5 # Use latest version
 
       - name: Build with Hugo
-        env:
-          HUGO_ENVIRONMENT: production
-          HUGO_ENV: production
         run: |
           hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
 
       - name: Upload artifact for GitHub Pages
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v3 # Use latest version
         with:
           path: ./public
 
@@ -64,8 +84,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4 # Use latest version
