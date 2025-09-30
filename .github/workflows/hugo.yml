@@ -2,10 +2,10 @@
 name: Deploy Hugo site to GitHub Pages
 
 on:
-  push:
-    branches:
-      - master # Or "main", if your default branch is main
-  workflow_dispatch: # Allows manual triggering
+  # push:
+  #   branches:
+  #     - master # или main
+  workflow_dispatch: 
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
