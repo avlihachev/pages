@@ -9,22 +9,57 @@
       <url>http://localhost:1313/papermod-cover.png</url>
       <link>http://localhost:1313/papermod-cover.png</link>
     </image>
-    <generator>Hugo -- 0.148.2</generator>
+    <generator>Hugo -- 0.150.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 May 2025 17:47:36 +0300</lastBuildDate>
+    <lastBuildDate>Wed, 01 Oct 2025 10:00:00 +0300</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automation</title>
+      <link>http://localhost:1313/tags/automation/</link>
+      <pubDate>Wed, 01 Oct 2025 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/tags/automation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Excel</title>
+      <link>http://localhost:1313/tags/excel/</link>
+      <pubDate>Wed, 01 Oct 2025 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/tags/excel/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Finance</title>
       <link>http://localhost:1313/tags/finance/</link>
-      <pubDate>Wed, 21 May 2025 17:47:36 +0300</pubDate>
+      <pubDate>Wed, 01 Oct 2025 10:00:00 +0300</pubDate>
       <guid>http://localhost:1313/tags/finance/</guid>
       <description></description>
     </item>
     <item>
       <title>Startups</title>
       <link>http://localhost:1313/tags/startups/</link>
-      <pubDate>Wed, 21 May 2025 17:47:36 +0300</pubDate>
+      <pubDate>Wed, 01 Oct 2025 10:00:00 +0300</pubDate>
       <guid>http://localhost:1313/tags/startups/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Case Study</title>
+      <link>http://localhost:1313/tags/case-study/</link>
+      <pubDate>Sun, 28 Sep 2025 14:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/tags/case-study/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SaaS</title>
+      <link>http://localhost:1313/tags/saas/</link>
+      <pubDate>Sun, 28 Sep 2025 14:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/tags/saas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cash Flow</title>
+      <link>http://localhost:1313/tags/cash-flow/</link>
+      <pubDate>Wed, 21 May 2025 17:47:36 +0300</pubDate>
+      <guid>http://localhost:1313/tags/cash-flow/</guid>
       <description></description>
     </item>
   </channel>

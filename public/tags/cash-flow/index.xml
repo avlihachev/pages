@@ -9,16 +9,16 @@
       <url>http://localhost:1313/papermod-cover.png</url>
       <link>http://localhost:1313/papermod-cover.png</link>
     </image>
-    <generator>Hugo -- 0.147.3</generator>
+    <generator>Hugo -- 0.150.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 May 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 21 May 2025 17:47:36 +0300</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/cash-flow/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Profit vs Cash — Why Your Startup Might Be Misleading You</title>
-      <link>http://localhost:1313/blog/profit_vs_cash/</link>
-      <pubDate>Wed, 21 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/profit_vs_cash/</guid>
-      <description>Understanding the difference between profit and cash flow is key to startup survival. Here&amp;rsquo;s a simple guide.</description>
+      <title>Profit vs Cash Flow: Why Your Startup Might Be Profitable But Still Run Out of Money</title>
+      <link>http://localhost:1313/blog/profit-vs-cash/</link>
+      <pubDate>Wed, 21 May 2025 17:47:36 +0300</pubDate>
+      <guid>http://localhost:1313/blog/profit-vs-cash/</guid>
+      <description>Learn the critical difference between profit and cash flow, and discover what financial metrics early-stage startups should actually be tracking.</description>
     </item>
   </channel>
 </rss>

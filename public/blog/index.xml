@@ -9,24 +9,30 @@
       <url>http://localhost:1313/papermod-cover.png</url>
       <link>http://localhost:1313/papermod-cover.png</link>
     </image>
-    <generator>Hugo -- 0.148.2</generator>
+    <generator>Hugo -- 0.150.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 May 2025 17:47:36 +0300</lastBuildDate>
+    <lastBuildDate>Wed, 01 Oct 2025 10:00:00 +0300</lastBuildDate>
     <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Profit vs cash</title>
+      <title>5 Excel Formulas Every Startup Founder Should Master</title>
+      <link>http://localhost:1313/blog/excel-formulas-startups/</link>
+      <pubDate>Wed, 01 Oct 2025 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/blog/excel-formulas-startups/</guid>
+      <description>Master these 5 essential Excel formulas to automate your startup&amp;#39;s financial tracking, from revenue projections to burn rate calculations.</description>
+    </item>
+    <item>
+      <title>How I Automated Financial Reporting for a $1M ARR SaaS (Case Study)</title>
+      <link>http://localhost:1313/blog/saas-automation-case-study/</link>
+      <pubDate>Sun, 28 Sep 2025 14:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/blog/saas-automation-case-study/</guid>
+      <description>Real case study showing how financial automation transformed a growing SaaS company&amp;#39;s operations and freed up founder time for growth activities.</description>
+    </item>
+    <item>
+      <title>Profit vs Cash Flow: Why Your Startup Might Be Profitable But Still Run Out of Money</title>
       <link>http://localhost:1313/blog/profit-vs-cash/</link>
       <pubDate>Wed, 21 May 2025 17:47:36 +0300</pubDate>
       <guid>http://localhost:1313/blog/profit-vs-cash/</guid>
-      <description>&lt;p&gt;Most early-stage founders look at their bank account to judge business health. But what if your startup is showing profit and you&amp;rsquo;re still running out of cash?&lt;/p&gt;
-&lt;p&gt;Let’s break down why &lt;strong&gt;profit ≠ cash&lt;/strong&gt;:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Profit&lt;/strong&gt; = Revenue - Expenses (accrual based)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Cash flow&lt;/strong&gt; = Actual money in/out&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;A startup can be profitable on paper but run out of money due to delayed payments, inventory, or investments.&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;Here’s what to track instead:&lt;/p&gt;</description>
+      <description>Learn the critical difference between profit and cash flow, and discover what financial metrics early-stage startups should actually be tracking.</description>
     </item>
   </channel>
 </rss>
