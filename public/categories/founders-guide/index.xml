@@ -11,8 +11,22 @@
     </image>
     <generator>Hugo -- 0.150.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 May 2025 17:47:36 +0300</lastBuildDate>
+    <lastBuildDate>Wed, 01 Oct 2025 10:00:00 +0300</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/founders-guide/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>5 Excel Formulas Every Startup Founder Should Master</title>
+      <link>http://localhost:1313/blog/excel-formulas-startups/</link>
+      <pubDate>Wed, 01 Oct 2025 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/blog/excel-formulas-startups/</guid>
+      <description>Master these 5 essential Excel formulas to automate your startup&amp;#39;s financial tracking, from revenue projections to burn rate calculations.</description>
+    </item>
+    <item>
+      <title>How I Automated Financial Reporting for a $1M ARR SaaS (Case Study)</title>
+      <link>http://localhost:1313/blog/saas-automation-case-study/</link>
+      <pubDate>Sun, 28 Sep 2025 14:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/blog/saas-automation-case-study/</guid>
+      <description>Real case study showing how financial automation transformed a growing SaaS company&amp;#39;s operations and freed up founder time for growth activities.</description>
+    </item>
     <item>
       <title>Profit vs Cash Flow: Why Your Startup Might Be Profitable But Still Run Out of Money</title>
       <link>http://localhost:1313/blog/profit-vs-cash/</link>

@@ -8,15 +8,15 @@ menu:
     - name: Blog
       url: /blog/
       weight: 1
-    - name: Products
-      url: /products/
-      weight: 2
-    - name: Resources
-      url: /resources/
-      weight: 3
-    - name: About
-      url: /about/
-      weight: 4
+    #   - name: Products
+    #    url: /products/
+    #     weight: 2
+    #    - name: Resources
+    #      url: /resources/
+    #      weight: 3
+    #    - name: About
+    #      url: /about/
+    #      weight: 4
     - name: Search
       url: /search/
       weight: 5
@@ -36,22 +36,22 @@ params:
 
   profileMode:
     enabled: true
-    title: "Personal Site"
-    subtitle: "Software Engineer · Finance Automation"
+    title: " "
+    subtitle: "Software Engineer"
     imageUrl: "/images/profile.jpg"
-    buttons:
-      - name: Blog
-        url: "/blog/"
-      - name: Products
-        url: "/products/"
-      - name: About
-        url: "/about/"
+  #    buttons:
+  #      - name: Blog
+  #        url: "/blog/"
+  #      - name: Products
+  #        url: "/products/"
+  #      - name: About
+  #        url: "/about/"
 
   socialIcons:
     - name: github
       url: "https://github.com/avlihachev"
     - name: twitter
-      url: "https://twitter.com/lihachev"
+      url: "https://twitter.com/avlihachev"
     - name: instagram
       url: "https://instagram.com/lihachev"
     - name: linkedin

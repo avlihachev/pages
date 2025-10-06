@@ -11,8 +11,30 @@
     </image>
     <generator>Hugo -- 0.150.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Oct 2025 14:19:48 +0300</lastBuildDate>
+    <lastBuildDate>Mon, 06 Oct 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Privacy Policy for Anki Translator</title>
+      <link>http://localhost:1313/toc_anki_translator/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/toc_anki_translator/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Last updated: October, 2025&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;Anki Translator is committed to protecting your privacy. This browser extension operates with a &lt;strong&gt;zero data collection&lt;/strong&gt; policy. We do not collect, store, transmit, or process any personal data.&lt;/p&gt;
+&lt;h2 id=&#34;data-collection-statement&#34;&gt;Data Collection Statement&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;WE DO NOT COLLECT ANY DATA.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This extension:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;❌ Does NOT collect personal information&lt;/li&gt;
+&lt;li&gt;❌ Does NOT track your browsing activity&lt;/li&gt;
+&lt;li&gt;❌ Does NOT use analytics or tracking services&lt;/li&gt;
+&lt;li&gt;❌ Does NOT store data on external servers&lt;/li&gt;
+&lt;li&gt;❌ Does NOT use cookies for tracking&lt;/li&gt;
+&lt;li&gt;❌ Does NOT transmit usage statistics&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;local-browser-storage&#34;&gt;Local Browser Storage&lt;/h2&gt;
+&lt;p&gt;The extension only uses your browser&amp;rsquo;s local storage for:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Contact</title>
       <link>http://localhost:1313/contact/</link>
@@ -33,34 +55,6 @@
       <pubDate>Sun, 05 Oct 2025 14:19:48 +0300</pubDate>
       <guid>http://localhost:1313/products/</guid>
       <description>Custom SaaS development and finance automation solutions for startups and freelancers</description>
-    </item>
-    <item>
-      <title>5 Excel Formulas Every Startup Founder Should Master</title>
-      <link>http://localhost:1313/blog/excel-formulas-startups/</link>
-      <pubDate>Wed, 01 Oct 2025 10:00:00 +0300</pubDate>
-      <guid>http://localhost:1313/blog/excel-formulas-startups/</guid>
-      <description>Master these 5 essential Excel formulas to automate your startup&amp;#39;s financial tracking, from revenue projections to burn rate calculations.</description>
-    </item>
-    <item>
-      <title>How I Automated Financial Reporting for a $1M ARR SaaS (Case Study)</title>
-      <link>http://localhost:1313/blog/saas-automation-case-study/</link>
-      <pubDate>Sun, 28 Sep 2025 14:00:00 +0300</pubDate>
-      <guid>http://localhost:1313/blog/saas-automation-case-study/</guid>
-      <description>Real case study showing how financial automation transformed a growing SaaS company&amp;#39;s operations and freed up founder time for growth activities.</description>
-    </item>
-    <item>
-      <title>Profit vs Cash Flow: Why Your Startup Might Be Profitable But Still Run Out of Money</title>
-      <link>http://localhost:1313/blog/profit-vs-cash/</link>
-      <pubDate>Wed, 21 May 2025 17:47:36 +0300</pubDate>
-      <guid>http://localhost:1313/blog/profit-vs-cash/</guid>
-      <description>Learn the critical difference between profit and cash flow, and discover what financial metrics early-stage startups should actually be tracking.</description>
-    </item>
-    <item>
-      <title>About</title>
-      <link>http://localhost:1313/about/</link>
-      <pubDate>Wed, 05 Apr 2023 14:19:48 +0300</pubDate>
-      <guid>http://localhost:1313/about/</guid>
-      <description>Software Engineer and SaaS Founder specializing in finance automation for startups and freelancers</description>
     </item>
   </channel>
 </rss>

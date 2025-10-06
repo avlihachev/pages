@@ -5,7 +5,7 @@ summary: "A detailed look at how custom automation saved TechStart 20+ hours wee
 description: "Real case study showing how financial automation transformed a growing SaaS company's operations and freed up founder time for growth activities."
 tags: ["Case Study", "SaaS", "Automation", "Finance"]
 categories: ["Founders Guide"]
-draft: false
+draft: true
 ---
 
 When TechStart's founder Sarah reached out, her SaaS had hit $1M ARR but she was drowning in financial admin work. Here's how we transformed their financial operations in 8 weeks.

@@ -5,7 +5,7 @@ summary: "Transform your financial tracking with these powerful Excel formulas t
 description: "Master these 5 essential Excel formulas to automate your startup's financial tracking, from revenue projections to burn rate calculations."
 tags: ["Excel", "Finance", "Automation", "Startups"]
 categories: ["Founders Guide"]
-draft: false
+draft: true
 ---
 
 Most startup founders spend way too much time manually updating spreadsheets. Here are 5 Excel formulas that will automate your financial tracking and save you hours every week.

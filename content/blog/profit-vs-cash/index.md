@@ -5,7 +5,7 @@ summary: "Most founders confuse profit with cash flow. Here's why your startup c
 description: "Learn the critical difference between profit and cash flow, and discover what financial metrics early-stage startups should actually be tracking."
 tags: ["Startups", "Finance", "Cash Flow"]
 categories: ["Founders Guide"]
-draft: false
+draft: true
 ---
 
 Most early-stage founders look at their bank account to judge business health. But what if your startup is showing profit and you're still running out of cash?
