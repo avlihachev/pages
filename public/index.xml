@@ -56,5 +56,12 @@
       <guid>http://localhost:1313/products/</guid>
       <description>Custom SaaS development and finance automation solutions for startups and freelancers</description>
     </item>
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Wed, 05 Apr 2023 14:19:48 +0300</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>Software Engineer</description>
+    </item>
   </channel>
 </rss>

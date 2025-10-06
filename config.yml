@@ -14,9 +14,9 @@ menu:
     #    - name: Resources
     #      url: /resources/
     #      weight: 3
-    #    - name: About
-    #      url: /about/
-    #      weight: 4
+    - name: About
+      url: /about/
+      weight: 4
     - name: Search
       url: /search/
       weight: 5
