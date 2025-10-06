@@ -23,6 +23,7 @@ menu:
 
 params:
   author: Aleksandr Likhachev
+  env: "production" # enables GA tracking in production
 
   defaultTheme: auto
   ShowReadingTime: true
@@ -94,3 +95,5 @@ outputs:
     - HTML
     - RSS
     - JSON
+
+googleAnalytics: "G-T6S72PH213"
