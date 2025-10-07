@@ -62,6 +62,7 @@ params:
 
 assets:
   disableHLJS: true
+  favicon: "/favicon.ico"
 
 markup:
   goldmark:
