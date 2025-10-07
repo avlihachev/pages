@@ -8,9 +8,9 @@ menu:
     - name: Blog
       url: /blog/
       weight: 1
-    #   - name: Products
-    #    url: /products/
-    #     weight: 2
+    - name: Projects
+      url: /projects/
+      weight: 2
     #    - name: Resources
     #      url: /resources/
     #      weight: 3

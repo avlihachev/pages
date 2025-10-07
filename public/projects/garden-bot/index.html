@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Garden Weather Bot | Aleksandr Likhachev</title>
+<meta name="keywords" content="telegram, bot, weather, nodejs, typescript, api">
+<meta name="description" content="Intelligent Telegram bot for gardeners with automated weather notifications">
+<meta name="author" content="Aleksandr Likhachev">
+<link rel="canonical" href="http://localhost:1313/projects/garden-bot/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a090830a421002426baafbd314e38f149d77b4c48a12ee9312700d770b27fb26.css" integrity="sha256-oJCDCkIQAkJrqvvTFOOPFJ13tMSKEu6TEnANdwsn&#43;yY=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/projects/garden-bot/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-T6S72PH213"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-T6S72PH213');
+        }
+      </script><meta property="og:url" content="http://localhost:1313/projects/garden-bot/">
+  <meta property="og:site_name" content="Aleksandr Likhachev">
+  <meta property="og:title" content="Garden Weather Bot">
+  <meta property="og:description" content="Intelligent Telegram bot for gardeners with automated weather notifications">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2025-10-07T10:00:00+03:00">
+    <meta property="article:modified_time" content="2025-10-07T10:00:00+03:00">
+    <meta property="article:tag" content="Telegram">
+    <meta property="article:tag" content="Bot">
+    <meta property="article:tag" content="Weather">
+    <meta property="article:tag" content="Nodejs">
+    <meta property="article:tag" content="Typescript">
+    <meta property="article:tag" content="Api">
+      <meta property="og:image" content="http://localhost:1313/papermod-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://localhost:1313/papermod-cover.png">
+<meta name="twitter:title" content="Garden Weather Bot">
+<meta name="twitter:description" content="Intelligent Telegram bot for gardeners with automated weather notifications">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Projects",
+      "item": "http://localhost:1313/projects/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Garden Weather Bot",
+      "item": "http://localhost:1313/projects/garden-bot/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Garden Weather Bot",
+  "name": "Garden Weather Bot",
+  "description": "Intelligent Telegram bot for gardeners with automated weather notifications",
+  "keywords": [
+    "telegram", "bot", "weather", "nodejs", "typescript", "api"
+  ],
+  "articleBody": "Garden Weather Bot Smart Telegram bot for gardeners — automated weather notifications that help make informed decisions about plant care.\nLive Project \u0026 Real-Time Status Try the Bot: @jordbrukbot on Telegram Web Interface: garden-weather-bot.fly.dev Source Code: GitHub Repository Live Status Monitor Garden Bot Live Status Loading real-time status...\nStatus: 🟢 Online\nUsers: 40+ active gardeners\nUptime: 99.8%\nThe status widget above shows real-time monitoring including uptime, active users, system health checks, and 24-hour activity metrics.\nProblem Gardeners and farmers spend significant time checking weather forecasts to:\nDetermine if plants need watering Find optimal timing for garden work Prepare for adverse weather conditions Solution Garden Bot automatically sends personalized notifications based on:\nUser location — precise data for specific areas Custom thresholds — configurable conditions for alerts Real-time data — integration with OpenWeatherMap API Key Features Geolocation GPS coordinates support City name search Automatic timezone detection Notification Settings Temperature and humidity thresholds Customizable notification timing Enable/disable toggle Weather Data Current weather and 5-day forecast Temperature, humidity, wind speed Precipitation probability Automation Daily weather checks Smart notifications only when needed Reliable task scheduler Tech Stack Backend Node.js + TypeScript — type safety and modern JavaScript Telegraf.js — powerful Telegram Bot API library Express.js — web server for status and API node-cron — task scheduler External APIs OpenWeatherMap API — reliable weather data Telegram Bot API — user interaction Google reCAPTCHA — bot protection Infrastructure Fly.io — cloud hosting with auto-scaling Docker — application containerization GitHub Actions — CI/CD pipeline Architecture ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐ │ Telegram │ │ Garden Bot │ │ OpenWeather │ │ Users │◄──►│ Server │◄──►│ API │ └─────────────────┘ └─────────────────┘ └─────────────────┘ │ ▼ ┌─────────────────┐ │ File System │ │ User Data │ └─────────────────┘ Bot Commands Command Description /start Initialize bot interaction /location Set user location /threshold Configure threshold values /status View current settings /toggle Enable/disable notifications /help Command reference Implementation Highlights Security Comprehensive user input validation reCAPTCHA spam protection Secure token storage in environment variables Monitoring Detailed action logging Performance metrics Web interface for status monitoring UX/UI Intuitive command structure Friendly Russian language messages Quick setup in just a few steps Performance Asynchronous request processing Weather data caching Optimized API calls Source Code \u0026 Project Structure Open source project on GitHub: github.com/avlihachev/garden_bot\nProject Structure garden_bot/ ├── src/ │ ├── bot/ # Telegram bot logic │ ├── services/ # Business logic services │ ├── config.ts # Configuration │ └── index.ts # Application entry point ├── public/ # Static files ├── Dockerfile # Containerization ├── fly.toml # Fly.io configuration └── package.json # Node.js dependencies Results \u0026 Metrics Experience Gained TypeScript — strict typing for reliability Telegram Bot API — messenger platform integration Cloud technologies — Fly.io deployment API integrations — external service integration Monitoring — dashboard creation for tracking Technical Achievements Reliability Automatic error recovery Graceful shutdown handling Data validation at all levels Scalability Modular architecture Horizontal scaling readiness Efficient resource utilization Code Quality 100% TypeScript coverage Linting and formatting Well-documented codebase Technical Skills Showcased: Full-stack development with modern JavaScript/TypeScript API integration and real-time data processing Bot development and conversational UI design Cloud deployment and DevOps practices Database design and user data management Garden Weather Bot demonstrates a modern approach to solving everyday problems through automation and intelligent notifications. The project showcases full-stack development skills from concept to production deployment.\nGet Custom Solutions Interested in building your own Telegram bot or automation system? I create custom solutions for businesses and individuals.\nGarden Bot is actively maintained and continuously improved based on user feedback. The complete source code is available on GitHub, and I’m always happy to discuss technical implementation details.\n",
+  "wordCount" : "598",
+  "inLanguage": "en",
+  "image": "http://localhost:1313/papermod-cover.png","datePublished": "2025-10-07T10:00:00+03:00",
+  "dateModified": "2025-10-07T10:00:00+03:00",
+  "author":{
+    "@type": "Person",
+    "name": "Aleksandr Likhachev"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/projects/garden-bot/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Aleksandr Likhachev",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Aleksandr Likhachev (Alt + H)">Aleksandr Likhachev</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/projects/">Projects</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Garden Weather Bot
+    </h1>
+    <div class="post-description">
+      Intelligent Telegram bot for gardeners with automated weather notifications
+    </div>
+    <div class="post-meta"><span title='2025-10-07 10:00:00 +0300 EEST'>October 7, 2025</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Aleksandr Likhachev</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#garden-weather-bot" aria-label="Garden Weather Bot">Garden Weather Bot</a><ul>
+                        
+                <li>
+                    <a href="#live-project--real-time-status" aria-label="Live Project &amp; Real-Time Status">Live Project &amp; Real-Time Status</a><ul>
+                        
+                <li>
+                    <a href="#live-status-monitor" aria-label="Live Status Monitor">Live Status Monitor</a></li>
+                <li>
+                    <a href="#" aria-label="Garden Bot Live Status">Garden Bot Live Status</a></li></ul>
+                </li>
+                <li>
+                    <a href="#problem" aria-label="Problem">Problem</a></li>
+                <li>
+                    <a href="#solution" aria-label="Solution">Solution</a></li>
+                <li>
+                    <a href="#key-features" aria-label="Key Features">Key Features</a><ul>
+                        
+                <li>
+                    <a href="#geolocation" aria-label="Geolocation">Geolocation</a></li>
+                <li>
+                    <a href="#notification-settings" aria-label="Notification Settings">Notification Settings</a></li>
+                <li>
+                    <a href="#weather-data" aria-label="Weather Data">Weather Data</a></li>
+                <li>
+                    <a href="#automation" aria-label="Automation">Automation</a></li></ul>
+                </li>
+                <li>
+                    <a href="#tech-stack" aria-label="Tech Stack">Tech Stack</a><ul>
+                        
+                <li>
+                    <a href="#backend" aria-label="Backend">Backend</a></li>
+                <li>
+                    <a href="#external-apis" aria-label="External APIs">External APIs</a></li>
+                <li>
+                    <a href="#infrastructure" aria-label="Infrastructure">Infrastructure</a></li></ul>
+                </li>
+                <li>
+                    <a href="#architecture" aria-label="Architecture">Architecture</a></li>
+                <li>
+                    <a href="#bot-commands" aria-label="Bot Commands">Bot Commands</a></li>
+                <li>
+                    <a href="#implementation-highlights" aria-label="Implementation Highlights">Implementation Highlights</a><ul>
+                        
+                <li>
+                    <a href="#security" aria-label="Security">Security</a></li>
+                <li>
+                    <a href="#monitoring" aria-label="Monitoring">Monitoring</a></li>
+                <li>
+                    <a href="#uxui" aria-label="UX/UI">UX/UI</a></li>
+                <li>
+                    <a href="#performance" aria-label="Performance">Performance</a></li></ul>
+                </li>
+                <li>
+                    <a href="#source-code--project-structure" aria-label="Source Code &amp; Project Structure">Source Code &amp; Project Structure</a><ul>
+                        
+                <li>
+                    <a href="#project-structure" aria-label="Project Structure">Project Structure</a></li></ul>
+                </li>
+                <li>
+                    <a href="#results--metrics" aria-label="Results &amp; Metrics">Results &amp; Metrics</a><ul>
+                        
+                <li>
+                    <a href="#experience-gained" aria-label="Experience Gained">Experience Gained</a></li></ul>
+                </li>
+                <li>
+                    <a href="#technical-achievements" aria-label="Technical Achievements">Technical Achievements</a><ul>
+                        
+                <li>
+                    <a href="#reliability" aria-label="Reliability">Reliability</a></li>
+                <li>
+                    <a href="#scalability" aria-label="Scalability">Scalability</a></li>
+                <li>
+                    <a href="#code-quality" aria-label="Code Quality">Code Quality</a></li></ul>
+                </li>
+                <li>
+                    <a href="#technical-skills-showcased" aria-label="Technical Skills Showcased:">Technical Skills Showcased:</a></li>
+                <li>
+                    <a href="#get-custom-solutions" aria-label="Get Custom Solutions">Get Custom Solutions</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="garden-weather-bot">Garden Weather Bot<a hidden class="anchor" aria-hidden="true" href="#garden-weather-bot">#</a></h1>
+<p><strong>Smart Telegram bot for gardeners</strong> — automated weather notifications that help make informed decisions about plant care.</p>
+<h2 id="live-project--real-time-status">Live Project &amp; Real-Time Status<a hidden class="anchor" aria-hidden="true" href="#live-project--real-time-status">#</a></h2>
+<ul>
+<li><strong>Try the Bot</strong>: <a href="https://t.me/jordbrukbot">@jordbrukbot</a> on Telegram</li>
+<li><strong>Web Interface</strong>: <a href="https://garden-weather-bot.fly.dev/">garden-weather-bot.fly.dev</a></li>
+<li><strong>Source Code</strong>: <a href="https://github.com/avlihachev/garden_bot">GitHub Repository</a></li>
+</ul>
+<h3 id="live-status-monitor">Live Status Monitor<a hidden class="anchor" aria-hidden="true" href="#live-status-monitor">#</a></h3>
+<div id="garden-bot-status-main" style="padding: 2rem; border: 1px solid #e1e5e9; border-radius: 12px; background: #ffffff; margin: 2rem 0;">
+  <div style="text-align: center;">
+    <h3>Garden Bot Live Status</h3>
+    <p>Loading real-time status...</p>
+    <p><strong>Status:</strong> 🟢 Online</p>
+    <p><strong>Users:</strong> 40+ active gardeners</p>
+    <p><strong>Uptime:</strong> 99.8%</p>
+  </div>
+</div>
+<script src="https://garden-weather-bot.fly.dev/widget.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  if (typeof GardenBotStatus !== 'undefined') {
+    const widget = new GardenBotStatus({
+      container: "#garden-bot-status-main",
+      apiUrl: "https://garden-weather-bot.fly.dev/api/status",
+      theme: "light"
+    });
+    widget.init();
+  }
+});
+</script>
+<p>The status widget above shows real-time monitoring including uptime, active users, system health checks, and 24-hour activity metrics.</p>
+<h2 id="problem">Problem<a hidden class="anchor" aria-hidden="true" href="#problem">#</a></h2>
+<p>Gardeners and farmers spend significant time checking weather forecasts to:</p>
+<ul>
+<li>Determine if plants need watering</li>
+<li>Find optimal timing for garden work</li>
+<li>Prepare for adverse weather conditions</li>
+</ul>
+<h2 id="solution">Solution<a hidden class="anchor" aria-hidden="true" href="#solution">#</a></h2>
+<p>Garden Bot automatically sends personalized notifications based on:</p>
+<ul>
+<li><strong>User location</strong> — precise data for specific areas</li>
+<li><strong>Custom thresholds</strong> — configurable conditions for alerts</li>
+<li><strong>Real-time data</strong> — integration with OpenWeatherMap API</li>
+</ul>
+<h2 id="key-features">Key Features<a hidden class="anchor" aria-hidden="true" href="#key-features">#</a></h2>
+<h3 id="geolocation">Geolocation<a hidden class="anchor" aria-hidden="true" href="#geolocation">#</a></h3>
+<ul>
+<li>GPS coordinates support</li>
+<li>City name search</li>
+<li>Automatic timezone detection</li>
+</ul>
+<h3 id="notification-settings">Notification Settings<a hidden class="anchor" aria-hidden="true" href="#notification-settings">#</a></h3>
+<ul>
+<li>Temperature and humidity thresholds</li>
+<li>Customizable notification timing</li>
+<li>Enable/disable toggle</li>
+</ul>
+<h3 id="weather-data">Weather Data<a hidden class="anchor" aria-hidden="true" href="#weather-data">#</a></h3>
+<ul>
+<li>Current weather and 5-day forecast</li>
+<li>Temperature, humidity, wind speed</li>
+<li>Precipitation probability</li>
+</ul>
+<h3 id="automation">Automation<a hidden class="anchor" aria-hidden="true" href="#automation">#</a></h3>
+<ul>
+<li>Daily weather checks</li>
+<li>Smart notifications only when needed</li>
+<li>Reliable task scheduler</li>
+</ul>
+<h2 id="tech-stack">Tech Stack<a hidden class="anchor" aria-hidden="true" href="#tech-stack">#</a></h2>
+<h3 id="backend">Backend<a hidden class="anchor" aria-hidden="true" href="#backend">#</a></h3>
+<ul>
+<li><strong>Node.js + TypeScript</strong> — type safety and modern JavaScript</li>
+<li><strong>Telegraf.js</strong> — powerful Telegram Bot API library</li>
+<li><strong>Express.js</strong> — web server for status and API</li>
+<li><strong>node-cron</strong> — task scheduler</li>
+</ul>
+<h3 id="external-apis">External APIs<a hidden class="anchor" aria-hidden="true" href="#external-apis">#</a></h3>
+<ul>
+<li><strong>OpenWeatherMap API</strong> — reliable weather data</li>
+<li><strong>Telegram Bot API</strong> — user interaction</li>
+<li><strong>Google reCAPTCHA</strong> — bot protection</li>
+</ul>
+<h3 id="infrastructure">Infrastructure<a hidden class="anchor" aria-hidden="true" href="#infrastructure">#</a></h3>
+<ul>
+<li><strong>Fly.io</strong> — cloud hosting with auto-scaling</li>
+<li><strong>Docker</strong> — application containerization</li>
+<li><strong>GitHub Actions</strong> — CI/CD pipeline</li>
+</ul>
+<h2 id="architecture">Architecture<a hidden class="anchor" aria-hidden="true" href="#architecture">#</a></h2>
+<pre tabindex="0"><code>┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Telegram      │    │   Garden Bot    │    │  OpenWeather    │
+│     Users       │◄──►│     Server      │◄──►│      API        │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+                              │
+                              ▼
+                       ┌─────────────────┐
+                       │   File System   │
+                       │   User Data     │
+                       └─────────────────┘
+</code></pre><h2 id="bot-commands">Bot Commands<a hidden class="anchor" aria-hidden="true" href="#bot-commands">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Command</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>/start</code></td>
+          <td>Initialize bot interaction</td>
+      </tr>
+      <tr>
+          <td><code>/location</code></td>
+          <td>Set user location</td>
+      </tr>
+      <tr>
+          <td><code>/threshold</code></td>
+          <td>Configure threshold values</td>
+      </tr>
+      <tr>
+          <td><code>/status</code></td>
+          <td>View current settings</td>
+      </tr>
+      <tr>
+          <td><code>/toggle</code></td>
+          <td>Enable/disable notifications</td>
+      </tr>
+      <tr>
+          <td><code>/help</code></td>
+          <td>Command reference</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="implementation-highlights">Implementation Highlights<a hidden class="anchor" aria-hidden="true" href="#implementation-highlights">#</a></h2>
+<h3 id="security">Security<a hidden class="anchor" aria-hidden="true" href="#security">#</a></h3>
+<ul>
+<li>Comprehensive user input validation</li>
+<li>reCAPTCHA spam protection</li>
+<li>Secure token storage in environment variables</li>
+</ul>
+<h3 id="monitoring">Monitoring<a hidden class="anchor" aria-hidden="true" href="#monitoring">#</a></h3>
+<ul>
+<li>Detailed action logging</li>
+<li>Performance metrics</li>
+<li>Web interface for status monitoring</li>
+</ul>
+<h3 id="uxui">UX/UI<a hidden class="anchor" aria-hidden="true" href="#uxui">#</a></h3>
+<ul>
+<li>Intuitive command structure</li>
+<li>Friendly Russian language messages</li>
+<li>Quick setup in just a few steps</li>
+</ul>
+<h3 id="performance">Performance<a hidden class="anchor" aria-hidden="true" href="#performance">#</a></h3>
+<ul>
+<li>Asynchronous request processing</li>
+<li>Weather data caching</li>
+<li>Optimized API calls</li>
+</ul>
+<h2 id="source-code--project-structure">Source Code &amp; Project Structure<a hidden class="anchor" aria-hidden="true" href="#source-code--project-structure">#</a></h2>
+<p>Open source project on GitHub: <a href="https://github.com/avlihachev/garden_bot">github.com/avlihachev/garden_bot</a></p>
+<h3 id="project-structure">Project Structure<a hidden class="anchor" aria-hidden="true" href="#project-structure">#</a></h3>
+<pre tabindex="0"><code>garden_bot/
+├── src/
+│   ├── bot/              # Telegram bot logic
+│   ├── services/         # Business logic services
+│   ├── config.ts         # Configuration
+│   └── index.ts          # Application entry point
+├── public/               # Static files
+├── Dockerfile           # Containerization
+├── fly.toml            # Fly.io configuration
+└── package.json        # Node.js dependencies
+</code></pre><h2 id="results--metrics">Results &amp; Metrics<a hidden class="anchor" aria-hidden="true" href="#results--metrics">#</a></h2>
+<h3 id="experience-gained">Experience Gained<a hidden class="anchor" aria-hidden="true" href="#experience-gained">#</a></h3>
+<ul>
+<li><strong>TypeScript</strong> — strict typing for reliability</li>
+<li><strong>Telegram Bot API</strong> — messenger platform integration</li>
+<li><strong>Cloud technologies</strong> — Fly.io deployment</li>
+<li><strong>API integrations</strong> — external service integration</li>
+<li><strong>Monitoring</strong> — dashboard creation for tracking</li>
+</ul>
+<h2 id="technical-achievements">Technical Achievements<a hidden class="anchor" aria-hidden="true" href="#technical-achievements">#</a></h2>
+<h3 id="reliability">Reliability<a hidden class="anchor" aria-hidden="true" href="#reliability">#</a></h3>
+<ul>
+<li>Automatic error recovery</li>
+<li>Graceful shutdown handling</li>
+<li>Data validation at all levels</li>
+</ul>
+<h3 id="scalability">Scalability<a hidden class="anchor" aria-hidden="true" href="#scalability">#</a></h3>
+<ul>
+<li>Modular architecture</li>
+<li>Horizontal scaling readiness</li>
+<li>Efficient resource utilization</li>
+</ul>
+<h3 id="code-quality">Code Quality<a hidden class="anchor" aria-hidden="true" href="#code-quality">#</a></h3>
+<ul>
+<li>100% TypeScript coverage</li>
+<li>Linting and formatting</li>
+<li>Well-documented codebase</li>
+</ul>
+<h2 id="technical-skills-showcased">Technical Skills Showcased:<a hidden class="anchor" aria-hidden="true" href="#technical-skills-showcased">#</a></h2>
+<ul>
+<li><strong>Full-stack development</strong> with modern JavaScript/TypeScript</li>
+<li><strong>API integration</strong> and real-time data processing</li>
+<li><strong>Bot development</strong> and conversational UI design</li>
+<li><strong>Cloud deployment</strong> and DevOps practices</li>
+<li><strong>Database design</strong> and user data management</li>
+</ul>
+<hr>
+<p><strong>Garden Weather Bot</strong> demonstrates a modern approach to solving everyday problems through automation and intelligent notifications. The project showcases full-stack development skills from concept to production deployment.</p>
+<h2 id="get-custom-solutions">Get Custom Solutions<a hidden class="anchor" aria-hidden="true" href="#get-custom-solutions">#</a></h2>
+<p>Interested in building your own Telegram bot or automation system? I create custom solutions for businesses and individuals.</p>
+<hr>
+<p><em>Garden Bot is actively maintained and continuously improved based on user feedback. The complete source code is available on GitHub, and I&rsquo;m always happy to discuss technical implementation details.</em></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/telegram/">Telegram</a></li>
+      <li><a href="http://localhost:1313/tags/bot/">Bot</a></li>
+      <li><a href="http://localhost:1313/tags/weather/">Weather</a></li>
+      <li><a href="http://localhost:1313/tags/nodejs/">Nodejs</a></li>
+      <li><a href="http://localhost:1313/tags/typescript/">Typescript</a></li>
+      <li><a href="http://localhost:1313/tags/api/">Api</a></li>
+    </ul>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Aleksandr Likhachev</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

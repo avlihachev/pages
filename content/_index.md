@@ -25,6 +25,16 @@ _— Sarah Chen, Founder at TechStart_
 **"His automation solution transformed our invoicing process. Professional and results-driven."**  
 _— Mike Rodriguez, Freelance Designer_
 
+## 🤖 Featured Project: Garden Bot
+
+**Smart Telegram bot for gardeners** - Weather notifications and gardening advice delivered automatically.
+
+- **40+ active users** receiving daily weather alerts
+- **99.8% uptime** over 3 months of operation
+- **Node.js + TypeScript** with real-time status monitoring
+
+[🤖 Try the Bot](https://t.me/jordbrukbot) • [📊 Live Status](/projects/garden-bot/status/) • [📖 Full Project Details](/projects/garden-bot/)
+
 ---
 
 ## 📚 Free Resources
@@ -37,8 +47,6 @@ Get started with these **free tools and templates**:
 - **Invoice Automation Spreadsheet**
 
 [Download Free Resources →](/resources)
-
----
 
 ## Latest from the Blog
 

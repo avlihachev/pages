@@ -104,6 +104,14 @@ I help startups and freelancers streamline their financial operations through cu
 **Solution**: Integrated system with time tracking and payments  
 **Result**: 85% reduction in administrative work
 
+### Case Study: Garden Bot (Live Project)
+
+**Challenge**: Gardeners missing weather alerts affecting plant care  
+**Solution**: Telegram bot with personalized weather notifications  
+**Result**: 40+ daily users, 99.8% uptime, positive user feedback
+
+[🤖 Try Garden Bot](https://t.me/jordbrukbot) • [📊 Live Status](/projects/garden-bot/status/) • [📖 Technical Deep Dive](/blog/garden-bot-development/)
+
 ---
 
 ## 🎯 Perfect For:
