@@ -11,14 +11,14 @@
     </image>
     <generator>Hugo -- 0.150.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Oct 2025 12:00:00 +0300</lastBuildDate>
+    <lastBuildDate>Tue, 07 Oct 2025 10:00:00 +0300</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/development/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Building Garden Bot: From Idea to Production Telegram Bot</title>
-      <link>http://localhost:1313/blog/garden-bot-development/</link>
-      <pubDate>Sun, 05 Oct 2025 12:00:00 +0300</pubDate>
-      <guid>http://localhost:1313/blog/garden-bot-development/</guid>
-      <description>Deep dive into building Garden Bot - a weather notification Telegram bot for gardeners. Learn about architecture decisions, API integrations, deployment strategies, and real-world challenges.</description>
+      <title>Anki Translator Chrome Extension</title>
+      <link>http://localhost:1313/projects/anki-translator/</link>
+      <pubDate>Tue, 07 Oct 2025 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/projects/anki-translator/</guid>
+      <description>The story of creating a Chrome extension for automatic Anki flashcard creation with DeepL API integration</description>
     </item>
   </channel>
 </rss>

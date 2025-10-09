@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Anki Translator Chrome Extension | Aleksandr Likhachev</title>
+<meta name="keywords" content="typescript, chrome-extension, anki, deepl, language-learning, react">
+<meta name="description" content="The story of creating a Chrome extension for automatic Anki flashcard creation with DeepL API integration">
+<meta name="author" content="Aleksandr Likhachev">
+<link rel="canonical" href="http://localhost:1313/projects/anki-translator/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a090830a421002426baafbd314e38f149d77b4c48a12ee9312700d770b27fb26.css" integrity="sha256-oJCDCkIQAkJrqvvTFOOPFJ13tMSKEu6TEnANdwsn&#43;yY=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/projects/anki-translator/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-T6S72PH213"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-T6S72PH213');
+        }
+      </script><meta property="og:url" content="http://localhost:1313/projects/anki-translator/">
+  <meta property="og:site_name" content="Aleksandr Likhachev">
+  <meta property="og:title" content="Anki Translator Chrome Extension">
+  <meta property="og:description" content="The story of creating a Chrome extension for automatic Anki flashcard creation with DeepL API integration">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2025-10-09T10:00:00+03:00">
+    <meta property="article:modified_time" content="2025-10-09T10:00:00+03:00">
+    <meta property="article:tag" content="Typescript">
+    <meta property="article:tag" content="Chrome-Extension">
+    <meta property="article:tag" content="Anki">
+    <meta property="article:tag" content="Deepl">
+    <meta property="article:tag" content="Language-Learning">
+    <meta property="article:tag" content="React">
+      <meta property="og:image" content="http://localhost:1313/papermod-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://localhost:1313/papermod-cover.png">
+<meta name="twitter:title" content="Anki Translator Chrome Extension">
+<meta name="twitter:description" content="The story of creating a Chrome extension for automatic Anki flashcard creation with DeepL API integration">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Projects",
+      "item": "http://localhost:1313/projects/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Anki Translator Chrome Extension",
+      "item": "http://localhost:1313/projects/anki-translator/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Anki Translator Chrome Extension",
+  "name": "Anki Translator Chrome Extension",
+  "description": "The story of creating a Chrome extension for automatic Anki flashcard creation with DeepL API integration",
+  "keywords": [
+    "typescript", "chrome-extension", "anki", "deepl", "language-learning", "react"
+  ],
+  "articleBody": "The Problem That Started It All One month before my Swedish language exam. What does a normal person do? Studies the language. What do I do? Write a Chrome extension! 🤦‍♂️\nBut seriously, the problem was real. While learning Swedish, I constantly encountered unfamiliar words in articles, documentation, and social media. The standard process looked like this:\nSelect a word Open DeepL in a new tab Paste the text Get the translation Open Anki Create a new card Copy the original and translation Save By the time I finished this entire cycle, I had already forgotten the context in which I encountered the word. Classic context switching problem.\nMeet Anki Translator — my solution to efficient language learning.\nTechnical Solution The idea was simple: one click → ready flashcard in Anki. But the implementation turned out to be more interesting than it seemed.\nExtension Architecture Chrome Extensions have a specific architecture with several isolated contexts:\n// Manifest V3 structure { \"manifest_version\": 3, \"background\": { \"service_worker\": \"background.js\" // Background process }, \"content_scripts\": [{ \"matches\": [\"\"], \"js\": [\"content.js\"] // Page script }], \"action\": { \"default_popup\": \"popup.html\" // Extension UI } } Background Script — central coordinator, handles API requests and inter-component communication.\nContent Script — works in the web page context, tracks text selection and shows context menu.\nPopup — React application for settings and manual translation input.\nText Selection Handling The most important part — intercepting user text selection:\n// content/content.ts let selectedText = \"\"; document.addEventListener(\"mouseup\", () =\u003e { const selection = window.getSelection(); if (selection \u0026\u0026 selection.toString().trim()) { selectedText = selection.toString().trim(); // Update context menu chrome.runtime.sendMessage({ action: \"updateContextMenu\", hasSelection: true, }); } }); // Context menu handling chrome.runtime.onMessage.addListener((message, sender, sendResponse) =\u003e { if (message.action === \"getSelectedText\") { sendResponse({ text: selectedText }); } }); DeepL API Integration DeepL provides an excellent REST API with support for 30+ languages:\n// background/deepl.ts class DeepLTranslator { private apiKey: string; private baseUrl: string; constructor(apiKey: string, isPro: boolean) { this.apiKey = apiKey; this.baseUrl = isPro ? \"https://api.deepl.com/v2\" : \"https://api-free.deepl.com/v2\"; } async translate(text: string, sourceLang: string, targetLang: string) { const response = await fetch(`${this.baseUrl}/translate`, { method: \"POST\", headers: { Authorization: `DeepL-Auth-Key ${this.apiKey}`, \"Content-Type\": \"application/x-www-form-urlencoded\", }, body: new URLSearchParams({ text, source_lang: sourceLang, target_lang: targetLang, }), }); const data = await response.json(); return data.translations[0].text; } } Anki Integration via AnkiConnect AnkiConnect is an Anki plugin that provides an HTTP API for external applications:\n// background/anki.ts class AnkiConnector { private readonly ankiConnectUrl = \"http://localhost:8765\"; async addNote(front: string, back: string, deck: string, tags: string[]) { const note = { deckName: deck, modelName: \"Basic\", fields: { Front: front, Back: back, }, tags, }; const response = await fetch(this.ankiConnectUrl, { method: \"POST\", headers: { \"Content-Type\": \"application/json\" }, body: JSON.stringify({ action: \"addNote\", version: 6, params: { note }, }), }); const result = await response.json(); if (result.error) { throw new Error(result.error); } return result.result; // Created card ID } } React UI with TypeScript For the interface, I chose React + TypeScript + TailwindCSS. The popup needs to be fast and intuitive:\n// popup/TranslationPopup.tsx interface TranslationState { originalText: string; translatedText: string; isLoading: boolean; error: string | null; } const TranslationPopup: React.FC = () =\u003e { const [state, setState] = useState\u003cTranslationState\u003e({ originalText: \"\", translatedText: \"\", isLoading: false, error: null, }); const handleTranslate = async () =\u003e { setState((prev) =\u003e ({ ...prev, isLoading: true, error: null })); try { const result = await chrome.runtime.sendMessage({ action: \"translate\", text: state.originalText, }); setState((prev) =\u003e ({ ...prev, translatedText: result.translation, isLoading: false, })); } catch (error) { setState((prev) =\u003e ({ ...prev, error: error.message, isLoading: false, })); } }; // JSX with TailwindCSS classes... }; Webpack Build Configuration Chrome Extensions require special Webpack configuration:\n// webpack.config.js module.exports = { entry: { background: \"./src/background/background.ts\", content: \"./src/content/content.ts\", popup: \"./src/popup/index.tsx\", options: \"./src/options/index.tsx\", }, output: { path: path.resolve(__dirname, \"dist\"), filename: \"[name].js\", }, module: { rules: [ { test: /\\.tsx?$/, use: \"ts-loader\", exclude: /node_modules/, }, { test: /\\.css$/, use: [\"style-loader\", \"css-loader\", \"postcss-loader\"], }, ], }, plugins: [ new CopyWebpackPlugin({ patterns: [{ from: \"manifest.json\" }, { from: \"public\" }], }), ], }; Privacy and Security One of the key principles is zero data collection. The extension:\nDoes not collect any user data API keys are stored locally in the browser Translations are sent directly from browser to DeepL No external servers or analytics All data remains on the user’s device.\nResults After one month of active use:\nCreated 800+ cards without extra clicks Time to create one card: 15 seconds → 3 seconds Learned enough Swedish to pass the exam! 🎉 Tech Stack TypeScript — for type safety and better DX React — for UI components TailwindCSS — for rapid styling Webpack — for building and bundling Chrome Extensions API — for browser integration DeepL API — for quality translations AnkiConnect — for Anki integration Conclusions Sometimes the best projects are born from personal pain. When existing tools don’t solve your problem efficiently — it’s time to write your own.\nThe project turned out to be not only useful for language learning, but also excellent practice for working with:\nChrome Extensions API Inter-component communication in browsers External API integration React in the constrained context of extensions And most importantly — it actually works and saves time every day!\n🔗 Check out the project: Anki Translator\n",
+  "wordCount" : "866",
+  "inLanguage": "en",
+  "image": "http://localhost:1313/papermod-cover.png","datePublished": "2025-10-09T10:00:00+03:00",
+  "dateModified": "2025-10-09T10:00:00+03:00",
+  "author":{
+    "@type": "Person",
+    "name": "Aleksandr Likhachev"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/projects/anki-translator/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Aleksandr Likhachev",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Aleksandr Likhachev (Alt + H)">Aleksandr Likhachev</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/projects/">Projects</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Anki Translator Chrome Extension
+    </h1>
+    <div class="post-description">
+      The story of creating a Chrome extension for automatic Anki flashcard creation with DeepL API integration
+    </div>
+    <div class="post-meta"><span title='2025-10-09 10:00:00 +0300 EEST'>October 9, 2025</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Aleksandr Likhachev</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#the-problem-that-started-it-all" aria-label="The Problem That Started It All">The Problem That Started It All</a></li>
+                <li>
+                    <a href="#technical-solution" aria-label="Technical Solution">Technical Solution</a><ul>
+                        
+                <li>
+                    <a href="#extension-architecture" aria-label="Extension Architecture">Extension Architecture</a></li>
+                <li>
+                    <a href="#text-selection-handling" aria-label="Text Selection Handling">Text Selection Handling</a></li>
+                <li>
+                    <a href="#deepl-api-integration" aria-label="DeepL API Integration">DeepL API Integration</a></li>
+                <li>
+                    <a href="#anki-integration-via-ankiconnect" aria-label="Anki Integration via AnkiConnect">Anki Integration via AnkiConnect</a></li>
+                <li>
+                    <a href="#react-ui-with-typescript" aria-label="React UI with TypeScript">React UI with TypeScript</a></li>
+                <li>
+                    <a href="#webpack-build-configuration" aria-label="Webpack Build Configuration">Webpack Build Configuration</a></li></ul>
+                </li>
+                <li>
+                    <a href="#privacy-and-security" aria-label="Privacy and Security">Privacy and Security</a></li>
+                <li>
+                    <a href="#results" aria-label="Results">Results</a></li>
+                <li>
+                    <a href="#tech-stack" aria-label="Tech Stack">Tech Stack</a></li>
+                <li>
+                    <a href="#conclusions" aria-label="Conclusions">Conclusions</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="the-problem-that-started-it-all">The Problem That Started It All<a hidden class="anchor" aria-hidden="true" href="#the-problem-that-started-it-all">#</a></h2>
+<p>One month before my Swedish language exam. What does a normal person do? Studies the language. What do I do? Write a Chrome extension! 🤦‍♂️</p>
+<p>But seriously, the problem was real. While learning Swedish, I constantly encountered unfamiliar words in articles, documentation, and social media. The standard process looked like this:</p>
+<ol>
+<li>Select a word</li>
+<li>Open DeepL in a new tab</li>
+<li>Paste the text</li>
+<li>Get the translation</li>
+<li>Open Anki</li>
+<li>Create a new card</li>
+<li>Copy the original and translation</li>
+<li>Save</li>
+</ol>
+<p>By the time I finished this entire cycle, I had already forgotten the context in which I encountered the word. Classic context switching problem.</p>
+<p>Meet <a href="https://chromewebstore.google.com/detail/hkaijlopnccgeebfkdbkkekdpkekapco?utm_source=item-share-cb"><strong>Anki Translator</strong></a> — my solution to efficient language learning.</p>
+<h2 id="technical-solution">Technical Solution<a hidden class="anchor" aria-hidden="true" href="#technical-solution">#</a></h2>
+<p>The idea was simple: <strong>one click → ready flashcard in Anki</strong>. But the implementation turned out to be more interesting than it seemed.</p>
+<h3 id="extension-architecture">Extension Architecture<a hidden class="anchor" aria-hidden="true" href="#extension-architecture">#</a></h3>
+<p>Chrome Extensions have a specific architecture with several isolated contexts:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// Manifest V3 structure
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;manifest_version&#34;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;background&#34;</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;service_worker&#34;</span><span class="o">:</span> <span class="s2">&#34;background.js&#34;</span>  <span class="c1">// Background process
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;content_scripts&#34;</span><span class="o">:</span> <span class="p">[{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;matches&#34;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&#34;&lt;all_urls&gt;&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;js&#34;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&#34;content.js&#34;</span><span class="p">]</span>              <span class="c1">// Page script
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="p">}],</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;action&#34;</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;default_popup&#34;</span><span class="o">:</span> <span class="s2">&#34;popup.html&#34;</span>     <span class="c1">// Extension UI
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><strong>Background Script</strong> — central coordinator, handles API requests and inter-component communication.</p>
+<p><strong>Content Script</strong> — works in the web page context, tracks text selection and shows context menu.</p>
+<p><strong>Popup</strong> — React application for settings and manual translation input.</p>
+<h3 id="text-selection-handling">Text Selection Handling<a hidden class="anchor" aria-hidden="true" href="#text-selection-handling">#</a></h3>
+<p>The most important part — intercepting user text selection:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// content/content.ts
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">let</span> <span class="nx">selectedText</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&#34;mouseup&#34;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">selection</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">getSelection</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nx">selection</span> <span class="o">&amp;&amp;</span> <span class="nx">selection</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">trim</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">selectedText</span> <span class="o">=</span> <span class="nx">selection</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">trim</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Update context menu
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">chrome</span><span class="p">.</span><span class="nx">runtime</span><span class="p">.</span><span class="nx">sendMessage</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">action</span><span class="o">:</span> <span class="s2">&#34;updateContextMenu&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">hasSelection</span>: <span class="kt">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Context menu handling
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">chrome</span><span class="p">.</span><span class="nx">runtime</span><span class="p">.</span><span class="nx">onMessage</span><span class="p">.</span><span class="nx">addListener</span><span class="p">((</span><span class="nx">message</span><span class="p">,</span> <span class="nx">sender</span><span class="p">,</span> <span class="nx">sendResponse</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nx">message</span><span class="p">.</span><span class="nx">action</span> <span class="o">===</span> <span class="s2">&#34;getSelectedText&#34;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">sendResponse</span><span class="p">({</span> <span class="nx">text</span>: <span class="kt">selectedText</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span></code></pre></div><h3 id="deepl-api-integration">DeepL API Integration<a hidden class="anchor" aria-hidden="true" href="#deepl-api-integration">#</a></h3>
+<p>DeepL provides an excellent REST API with support for 30+ languages:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// background/deepl.ts
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">class</span> <span class="nx">DeepLTranslator</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">private</span> <span class="nx">apiKey</span>: <span class="kt">string</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">private</span> <span class="nx">baseUrl</span>: <span class="kt">string</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">constructor</span><span class="p">(</span><span class="nx">apiKey</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">isPro</span>: <span class="kt">boolean</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">apiKey</span> <span class="o">=</span> <span class="nx">apiKey</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">baseUrl</span> <span class="o">=</span> <span class="nx">isPro</span>
+</span></span><span class="line"><span class="cl">      <span class="o">?</span> <span class="s2">&#34;https://api.deepl.com/v2&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="o">:</span> <span class="s2">&#34;https://api-free.deepl.com/v2&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">async</span> <span class="nx">translate</span><span class="p">(</span><span class="nx">text</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">sourceLang</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">targetLang</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">baseUrl</span><span class="si">}</span><span class="sb">/translate`</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">method</span><span class="o">:</span> <span class="s2">&#34;POST&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">headers</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">Authorization</span><span class="o">:</span> <span class="sb">`DeepL-Auth-Key </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">apiKey</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Content-Type&#34;</span><span class="o">:</span> <span class="s2">&#34;application/x-www-form-urlencoded&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">body</span>: <span class="kt">new</span> <span class="nx">URLSearchParams</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">text</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">source_lang</span>: <span class="kt">sourceLang</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">target_lang</span>: <span class="kt">targetLang</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">data</span><span class="p">.</span><span class="nx">translations</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">text</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="anki-integration-via-ankiconnect">Anki Integration via AnkiConnect<a hidden class="anchor" aria-hidden="true" href="#anki-integration-via-ankiconnect">#</a></h3>
+<p>AnkiConnect is an Anki plugin that provides an HTTP API for external applications:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// background/anki.ts
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">class</span> <span class="nx">AnkiConnector</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">private</span> <span class="kr">readonly</span> <span class="nx">ankiConnectUrl</span> <span class="o">=</span> <span class="s2">&#34;http://localhost:8765&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">async</span> <span class="nx">addNote</span><span class="p">(</span><span class="nx">front</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">back</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">deck</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">tags</span>: <span class="kt">string</span><span class="p">[])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">note</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">deckName</span>: <span class="kt">deck</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">modelName</span><span class="o">:</span> <span class="s2">&#34;Basic&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">Front</span>: <span class="kt">front</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">Back</span>: <span class="kt">back</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">tags</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">ankiConnectUrl</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">method</span><span class="o">:</span> <span class="s2">&#34;POST&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">headers</span><span class="o">:</span> <span class="p">{</span> <span class="s2">&#34;Content-Type&#34;</span><span class="o">:</span> <span class="s2">&#34;application/json&#34;</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">body</span>: <span class="kt">JSON.stringify</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">action</span><span class="o">:</span> <span class="s2">&#34;addNote&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">version</span>: <span class="kt">6</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">params</span><span class="o">:</span> <span class="p">{</span> <span class="nx">note</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">error</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">result</span><span class="p">.</span><span class="nx">result</span><span class="p">;</span> <span class="c1">// Created card ID
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="react-ui-with-typescript">React UI with TypeScript<a hidden class="anchor" aria-hidden="true" href="#react-ui-with-typescript">#</a></h3>
+<p>For the interface, I chose React + TypeScript + TailwindCSS. The popup needs to be fast and intuitive:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// popup/TranslationPopup.tsx
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">interface</span> <span class="nx">TranslationState</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">originalText</span>: <span class="kt">string</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">translatedText</span>: <span class="kt">string</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">isLoading</span>: <span class="kt">boolean</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">error</span>: <span class="kt">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">TranslationPopup</span>: <span class="kt">React.FC</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">[</span><span class="nx">state</span><span class="p">,</span> <span class="nx">setState</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">&lt;</span><span class="nt">TranslationState</span><span class="p">&gt;({</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">originalText</span><span class="o">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">translatedText</span><span class="o">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">isLoading</span>: <span class="kt">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">error</span>: <span class="kt">null</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">handleTranslate</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">setState</span><span class="p">((</span><span class="nx">prev</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span> <span class="p">...</span><span class="nx">prev</span><span class="p">,</span> <span class="nx">isLoading</span>: <span class="kt">true</span><span class="p">,</span> <span class="nx">error</span>: <span class="kt">null</span> <span class="p">}));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">chrome</span><span class="p">.</span><span class="nx">runtime</span><span class="p">.</span><span class="nx">sendMessage</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">action</span><span class="o">:</span> <span class="s2">&#34;translate&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">text</span>: <span class="kt">state.originalText</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="nx">setState</span><span class="p">((</span><span class="nx">prev</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span>
+</span></span><span class="line"><span class="cl">        <span class="p">...</span><span class="nx">prev</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">translatedText</span>: <span class="kt">result.translation</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">isLoading</span>: <span class="kt">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}));</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">setState</span><span class="p">((</span><span class="nx">prev</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span>
+</span></span><span class="line"><span class="cl">        <span class="p">...</span><span class="nx">prev</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">error</span>: <span class="kt">error.message</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">isLoading</span>: <span class="kt">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}));</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// JSX with TailwindCSS classes...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
+</span></span></code></pre></div><h3 id="webpack-build-configuration">Webpack Build Configuration<a hidden class="anchor" aria-hidden="true" href="#webpack-build-configuration">#</a></h3>
+<p>Chrome Extensions require special Webpack configuration:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">// webpack.config.js
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">entry</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">background</span><span class="o">:</span> <span class="s2">&#34;./src/background/background.ts&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">content</span><span class="o">:</span> <span class="s2">&#34;./src/content/content.ts&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">popup</span><span class="o">:</span> <span class="s2">&#34;./src/popup/index.tsx&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">options</span><span class="o">:</span> <span class="s2">&#34;./src/options/index.tsx&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">output</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">path</span><span class="o">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s2">&#34;dist&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">filename</span><span class="o">:</span> <span class="s2">&#34;[name].js&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">module</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">rules</span><span class="o">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">test</span><span class="o">:</span> <span class="sr">/\.tsx?$/</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">use</span><span class="o">:</span> <span class="s2">&#34;ts-loader&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">exclude</span><span class="o">:</span> <span class="sr">/node_modules/</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">test</span><span class="o">:</span> <span class="sr">/\.css$/</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">use</span><span class="o">:</span> <span class="p">[</span><span class="s2">&#34;style-loader&#34;</span><span class="p">,</span> <span class="s2">&#34;css-loader&#34;</span><span class="p">,</span> <span class="s2">&#34;postcss-loader&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">],</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="k">new</span> <span class="nx">CopyWebpackPlugin</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">patterns</span><span class="o">:</span> <span class="p">[{</span> <span class="nx">from</span><span class="o">:</span> <span class="s2">&#34;manifest.json&#34;</span> <span class="p">},</span> <span class="p">{</span> <span class="nx">from</span><span class="o">:</span> <span class="s2">&#34;public&#34;</span> <span class="p">}],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}),</span>
+</span></span><span class="line"><span class="cl">  <span class="p">],</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><h2 id="privacy-and-security">Privacy and Security<a hidden class="anchor" aria-hidden="true" href="#privacy-and-security">#</a></h2>
+<p>One of the key principles is <strong>zero data collection</strong>. The extension:</p>
+<ul>
+<li>Does not collect any user data</li>
+<li>API keys are stored locally in the browser</li>
+<li>Translations are sent directly from browser to DeepL</li>
+<li>No external servers or analytics</li>
+</ul>
+<p>All data remains on the user&rsquo;s device.</p>
+<h2 id="results">Results<a hidden class="anchor" aria-hidden="true" href="#results">#</a></h2>
+<p>After one month of active use:</p>
+<ul>
+<li>Created 800+ cards without extra clicks</li>
+<li>Time to create one card: 15 seconds → 3 seconds</li>
+<li>Learned enough Swedish to pass the exam! 🎉</li>
+</ul>
+<h2 id="tech-stack">Tech Stack<a hidden class="anchor" aria-hidden="true" href="#tech-stack">#</a></h2>
+<ul>
+<li><strong>TypeScript</strong> — for type safety and better DX</li>
+<li><strong>React</strong> — for UI components</li>
+<li><strong>TailwindCSS</strong> — for rapid styling</li>
+<li><strong>Webpack</strong> — for building and bundling</li>
+<li><strong>Chrome Extensions API</strong> — for browser integration</li>
+<li><strong>DeepL API</strong> — for quality translations</li>
+<li><strong>AnkiConnect</strong> — for Anki integration</li>
+</ul>
+<h2 id="conclusions">Conclusions<a hidden class="anchor" aria-hidden="true" href="#conclusions">#</a></h2>
+<p>Sometimes the best projects are born from personal pain. When existing tools don&rsquo;t solve your problem efficiently — it&rsquo;s time to write your own.</p>
+<p>The project turned out to be not only useful for language learning, but also excellent practice for working with:</p>
+<ul>
+<li>Chrome Extensions API</li>
+<li>Inter-component communication in browsers</li>
+<li>External API integration</li>
+<li>React in the constrained context of extensions</li>
+</ul>
+<p>And most importantly — it actually works and saves time every day!</p>
+<p><strong>🔗 Check out the project:</strong> <a href="https://chromewebstore.google.com/detail/hkaijlopnccgeebfkdbkkekdpkekapco?utm_source=item-share-cb">Anki Translator</a></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/typescript/">Typescript</a></li>
+      <li><a href="http://localhost:1313/tags/chrome-extension/">Chrome-Extension</a></li>
+      <li><a href="http://localhost:1313/tags/anki/">Anki</a></li>
+      <li><a href="http://localhost:1313/tags/deepl/">Deepl</a></li>
+      <li><a href="http://localhost:1313/tags/language-learning/">Language-Learning</a></li>
+      <li><a href="http://localhost:1313/tags/react/">React</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="http://localhost:1313/projects/garden-bot/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Garden Weather Bot</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Aleksandr Likhachev</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
