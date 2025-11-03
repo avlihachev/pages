@@ -1,8 +1,15 @@
 ---
 title: "Anki Translator Chrome Extension"
-description: "A Chrome extension for translating Anki flashcards using GPT-4"
 date: 2025-10-09T10:00:00+03:00
-tags: ["typescript", "chrome-extension", "anki", "deepl", "language-learning", "react"]
+tags:
+  [
+    "typescript",
+    "chrome-extension",
+    "anki",
+    "deepl",
+    "language-learning",
+    "react",
+  ]
 categories: ["projects", "development"]
 description: "The story of creating a Chrome extension for automatic Anki flashcard creation with DeepL API integration"
 featured: true
