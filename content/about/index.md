@@ -14,7 +14,7 @@ After a long career leading IT infrastructure and operations, I transitioned int
 
 ---
 
-## 💻 What I Do
+## What I Do
 
 I design and build backend-focused systems and data-centric applications using **Golang**, **TypeScript**, and **PostgreSQL**. My focus is on delivering **robust, maintainable**, and **efficient** solutions that align with business goals.
 
@@ -28,7 +28,7 @@ Key areas of work:
 
 ---
 
-## 🚀 Professional Journey
+## Professional Journey
 
 **Ahola Digital** — _Software Developer_  
 _Kokkola, Finland | June 2022 – Present_  
@@ -56,14 +56,14 @@ Earlier roles include:
 
 ---
 
-## 🎓 Education
+## Education
 
 - **MBA in Economics and Finance**, Institute of Business Studies (2017)
-- **Bachelor of Engineering**, Murmansk State Technical University (1999)
+- **Specialist of Engineering**, Murmansk State Technical University (1999)
 
 ---
 
-## 🧠 Skills & Tools
+## Skills & Tools
 
 - **Programming:** Golang, TypeScript, SQL
 - **Databases:** PostgreSQL, MySQL
@@ -73,7 +73,7 @@ Earlier roles include:
 
 ---
 
-## 🌍 Languages
+## Languages
 
 - English — Professional working proficiency
 - Swedish — Elementary
@@ -81,7 +81,7 @@ Earlier roles include:
 
 ---
 
-## 📫 Connect
+## Connect
 
 - [LinkedIn](https://www.linkedin.com/in/aleksandr-likhachev-b893468)
 - [GitHub](https://github.com/avlihachev)
