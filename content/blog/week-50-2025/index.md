@@ -1,6 +1,6 @@
 ---
 title: "A Week of Actually Useful AI Automation"
-date: 2024-12-13
+date: 2025-12-12
 draft: false
 tags: ["claude-code", "automation", "mcp", "dev-workflow", "ai-tools"]
 categories: ["Development", "Productivity"]
