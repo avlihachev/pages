@@ -1,7 +1,7 @@
 ---
 title: "Pengar: Why I Built Yet Another Finance App"
 description: "Finance app that tracks by life areas, not categories. Multi-currency, project-based savings, selective tracking. Built with Lit and Supabase."
-date: 2025-01-08
+date: 2026-01-08
 tags:
   [
     "typescript",
