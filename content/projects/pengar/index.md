@@ -18,6 +18,8 @@ categories: ["projects", "development"]
 
 # Pengar: Why I Built Yet Another Finance App
 
+![Pengar landing page](landing.png)
+
 ## The Graveyard of Abandoned Apps
 
 I've tried every finance app. YNAB, Mint, spreadsheets, random apps with promising reviews. The pattern is always the same: two weeks of enthusiasm, meticulous categorization of coffee purchases, then silence.
@@ -51,6 +53,8 @@ Same transactions. Different insight.
 **Multi-currency** as default. Salary in EUR, spending in SEK, savings in USD. Everything converts automatically. If you've lived in multiple currencies, you know this pain.
 
 **Selective tracking.** Log what matters, skip what doesn't. No reconciliation guilt.
+
+![Pengar login page](login.png)
 
 ## Tech Stack
 
