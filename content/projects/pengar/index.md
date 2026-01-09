@@ -54,7 +54,7 @@ Same transactions. Different insight.
 
 **Selective tracking.** Log what matters, skip what doesn't. No reconciliation guilt.
 
-![Pengar login page](login.png)
+![Pengar dashboard page](dashboard.png)
 
 ## Tech Stack
 
