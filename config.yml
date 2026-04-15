@@ -5,21 +5,15 @@ theme: "PaperMod"
 
 menu:
   main:
-    - name: Blog
-      url: /blog/
-      weight: 1
-    - name: Courses
-      url: /courses/
-      weight: 2
     - name: Projects
       url: /projects/
-      weight: 3
+      weight: 1
     - name: About
       url: /about/
-      weight: 4
+      weight: 2
     - name: Search
       url: /search/
-      weight: 5
+      weight: 3
 
 params:
   author: Aleksandr Likhachev
@@ -38,7 +32,7 @@ params:
   profileMode:
     enabled: true
     title: " "
-    subtitle: "Software Engineer"
+    subtitle: "Software Engineer & AI Agent Developer"
     imageUrl: "/images/profile.jpg"
   #    buttons:
   #      - name: Blog
