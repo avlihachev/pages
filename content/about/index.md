@@ -3,28 +3,29 @@ title: "About"
 date: 2023-04-05T14:19:48+03:00
 layout: staticpage
 draft: false
-description: "Software Engineer"
+description: "Software Engineer & AI Agent Developer"
 ---
 
 # About Me
 
 Hi, I’m **Aleksandr Likhachev** — a software developer based in **Kokkola, Finland**, with 18 years of experience across IT management, system architecture, and software engineering.
 
-After a long career leading IT infrastructure and operations, I transitioned into hands-on software development — bringing with me a strong background in **DevOps**, **project management**, and **data-driven decision making**.
+After a long career leading IT infrastructure and operations, I transitioned into hands-on software development. Now I build **production AI agents** using Claude Agent SDK and MCP — autonomous systems that reason, use tools, and solve real business problems.
+
+I also offer custom AI agent development for businesses at [innalab.com](https://dev.innalab.com).
 
 ---
 
 ## What I Do
 
-I design and build backend-focused systems and data-centric applications using **Golang**, **TypeScript**, and **PostgreSQL**. My focus is on delivering **robust, maintainable**, and **efficient** solutions that align with business goals.
+I design and build backend systems, data-centric applications, and AI agents using **Go**, **TypeScript**, and **Claude Agent SDK**. My focus is on delivering **robust, maintainable**, and **efficient** solutions.
 
 Key areas of work:
 
-- Backend development in Go and TypeScript
-- Database design and optimization (PostgreSQL, SQL)
-- Data analytics and visualization (Power BI, Apache Superset)
-- DevOps & SRE principles for reliable deployments
-- Agile collaboration with cross-functional teams
+- AI agent development (Claude Agent SDK, MCP servers, autonomous pipelines)
+- Backend systems in Go and TypeScript
+- Database design and optimization (PostgreSQL, SQLite)
+- DevOps & infrastructure (Docker, Fly.io, GitHub Actions)
 
 ---
 
@@ -65,18 +66,17 @@ Earlier roles include:
 
 ## Skills & Tools
 
-- **Programming:** Golang, TypeScript, SQL
-- **Databases:** PostgreSQL, MySQL
-- **DevOps & Tools:** Docker, Jira, Confluence, GitHub Actions
-- **Data & BI:** Power BI, Apache Superset, MS Excel
-- **Methodologies:** DevOps, SRE, Agile, SDLC Optimization
+- **AI & Agents:** Claude Agent SDK, MCP, Anthropic API, Telegram Bot API
+- **Programming:** Go, TypeScript, Python, SQL
+- **Databases:** PostgreSQL, SQLite
+- **Infrastructure:** Docker, Fly.io, GitHub Actions, Cloudflare
 
 ---
 
 ## Languages
 
 - English — Professional working proficiency
-- Swedish — Elementary
+- Swedish — Intermediate (B1-B2)
 - Russian — Native
 
 ---
@@ -89,4 +89,4 @@ Earlier roles include:
 
 ---
 
-> “From IT leadership to modern software development — I believe that deep technical understanding combined with management experience creates the foundation for truly effective digital solutions.”
+> “From IT leadership to AI agent development — deep technical understanding combined with management experience creates the foundation for effective automation.”
