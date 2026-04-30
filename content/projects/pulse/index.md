@@ -57,6 +57,22 @@ Frontend:
 
 **No streaming yet.** The full pipeline takes ~60 seconds. Currently a single POST request with a loading animation. SSE streaming is a future improvement.
 
+## Deployment: This Agent Doesn't Run in the Cloud
+
+I tried to deploy Pulse on Fly.io. The IP got blocked quickly — 429s and login walls on Reddit's JSON API, even with OAuth credentials. This isn't a fluke: Reddit's anti-abuse system [blocks IPs at the ASN level](https://multilogin.com/blog/reddit-ip-banned/) for known datacenters, VPNs, proxies, and Tor exit nodes. The whole residential-proxy industry exists because Reddit (and a few other large platforms) treat cloud-provider IPs as untrusted by default. Residential IPs don't trigger it.
+
+So Pulse runs on a laptop at my house, exposed to the internet via [Cloudflare Tunnel](https://www.cloudflare.com/products/tunnel/). The public endpoint at dev.innalab.com routes through `cloudflared` to localhost on the laptop. Zero exposed ports on the home network, free tier on Cloudflare's side, ~10W of laptop electricity.
+
+This is a **hybrid agent architecture**: the model and orchestration live in the cloud (Claude Agent SDK calls go to Anthropic's API), while the side effects — anything that needs IP reputation — run on the residential edge. MCP makes this clean: the four tools (`parse_website`, `search_reddit`, `analyze_thread`, `check_subreddit`) are subprocesses spawned next to whichever process needs them. Move the agent process, the tools follow. The Claude Agent SDK doesn't notice or care.
+
+Tradeoffs:
+
+- **Single point of failure.** One laptop, one residential connection. Fine for a demo, not for a paid product at scale.
+- **Sleep discipline.** The laptop has to stay awake while plugged in.
+- **No cloud egress quota.** A real cost win — Reddit scans pull a few MB per run, and cloud egress isn't free at scale.
+
+This was not the deployment I planned. It's the deployment that worked.
+
 ## Live Demo
 
 Pulse is live as a demo on [dev.innalab.com/demos/pulse](https://dev.innalab.com/demos/pulse). Built as part of [AI Agent Development practice](https://dev.innalab.com).
