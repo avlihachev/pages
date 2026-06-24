@@ -1,4 +1,5 @@
 ---
+canonicalURL: "https://dev.innalab.com/learn/mcp/"
 title: "Module 3: Building an MCP Server — Giving Claude Real-Time Data"
 date: 2026-03-29
 draft: false

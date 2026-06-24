@@ -1,4 +1,5 @@
 ---
+canonicalURL: "https://dev.innalab.com/learn/"
 title: "Building an AI Agent with Claude Code"
 description: "A project-based course on extending Claude Code with skills, MCP servers, and autonomous agents. No coding experience required: learn to direct AI to build real systems."
 date: 2026-03-29

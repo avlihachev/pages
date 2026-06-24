@@ -1,4 +1,5 @@
 ---
+canonicalURL: "https://dev.innalab.com/learn/essentials/"
 title: "Module 1: Claude Code Essentials"
 date: 2026-03-29
 draft: false

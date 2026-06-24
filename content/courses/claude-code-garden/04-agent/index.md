@@ -1,4 +1,5 @@
 ---
+canonicalURL: "https://dev.innalab.com/learn/agent/"
 title: "Module 4: Building an AI Agent — Autonomous Intelligence"
 date: 2026-03-29
 draft: false
