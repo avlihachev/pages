@@ -43,19 +43,19 @@ You didn't ask for this. The agent checked the forecast, cross-referenced it wit
 Three layers, each building on the previous one:
 
 ```
-┌───────────────────────────────────────┐
-│  Layer 3: AI Agent                    │
-│  Autonomous — polls, decides, acts    │
-│  Agent SDK + Telegram integration     │
-├───────────────────────────────────────┤
-│  Layer 2: MCP Server                  │
-│  Real-time data — weather, soil, sun  │
-│  8 tools, 3 free APIs, no keys       │
-├───────────────────────────────────────┤
-│  Layer 1: Skill                       │
-│  Domain knowledge — gardening logic   │
-│  Parametric rules, not hardcoded      │
-└───────────────────────────────────────┘
++----------------------------------------+
+|  Layer 3: AI Agent                     |
+|  Autonomous: polls, decides, acts      |
+|  Agent SDK + Telegram integration      |
++----------------------------------------+
+|  Layer 2: MCP Server                   |
+|  Real-time data: weather, soil, sun    |
+|  8 tools, 3 free APIs, no keys         |
++----------------------------------------+
+|  Layer 1: Skill                        |
+|  Domain knowledge: gardening logic     |
+|  Parametric rules, not hardcoded       |
++----------------------------------------+
 ```
 
 Each layer solves a specific limitation of the one below.

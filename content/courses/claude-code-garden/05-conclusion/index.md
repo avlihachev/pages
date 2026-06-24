@@ -20,16 +20,16 @@ Let's step back and look at what we actually built, and how to use the same patt
 ## The Three-Layer Pattern
 
 ```
-┌────────────────────────────────────────┐
-│  Agent          — acts on its own      │
-│  Polls, decides, notifies              │
-├────────────────────────────────────────┤
-│  MCP Server     — provides live data   │
-│  APIs, sensors, external systems       │
-├────────────────────────────────────────┤
-│  Skill          — encodes knowledge    │
-│  Rules, formulas, domain expertise     │
-└────────────────────────────────────────┘
++----------------------------------------+
+|  Agent: acts on its own                |
+|  Polls, decides, notifies              |
++----------------------------------------+
+|  MCP Server: provides live data        |
+|  APIs, sensors, external systems       |
++----------------------------------------+
+|  Skill: encodes knowledge              |
+|  Rules, formulas, domain expertise     |
++----------------------------------------+
 ```
 
 **Skill** = what you know. Domain expertise encoded as parametric rules. Not "plant tomatoes in May" but "start seedlings N weeks before last_frost_date, where N depends on variety." No code, just markdown.
