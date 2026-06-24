@@ -30,10 +30,7 @@ The garden agent lives in Telegram. You talk to it like you'd talk to an experie
 
 It doesn't give you a generic "6-8 weeks before last frost" answer from the internet. It knows your location (Kokkola, Finland), your last frost date (June 15), your growing setup (containers, south-facing balcony, grow lights), and your specific tomato varieties. It calculates: "Start Sungold and Black Cherry under grow lights around April 20. San Marzano needs more time, start April 13."
 
-**Send a photo:**
-> *[photo of yellowing tomato leaves]*
-
-It identifies nitrogen deficiency (likely from the container soil being depleted after 6 weeks) and suggests a specific fertilizer schedule based on what stage your plants are in.
+**Send a photo.** Snap a picture of yellowing tomato leaves and it identifies nitrogen deficiency (likely from the container soil being depleted after 6 weeks), then suggests a specific fertilizer schedule based on what stage your plants are in.
 
 **Proactive notifications:**
 
