@@ -5,15 +5,18 @@ theme: "PaperMod"
 
 menu:
   main:
+    - name: Courses
+      url: /courses/
+      weight: 1
     - name: Projects
       url: /projects/
-      weight: 1
+      weight: 2
     - name: About
       url: /about/
-      weight: 2
+      weight: 3
     - name: Search
       url: /search/
-      weight: 3
+      weight: 4
 
 params:
   author: Aleksandr Likhachev
