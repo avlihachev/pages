@@ -173,7 +173,6 @@ The pattern (skill for knowledge, MCP for data, agent for autonomy) isn't specif
 
 ## Source Code
 
-- [Garden Bot](https://github.com/avlihachev/garden-bot)
 - [Garden Agent](https://github.com/avlihachev/garden-agent)
 
 <!-- {{< youtube VIDEO_ID_HERE >}} -->

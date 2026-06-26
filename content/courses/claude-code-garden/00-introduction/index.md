@@ -117,7 +117,7 @@ Everything is open source:
 
 - [Garden Skill](https://github.com/avlihachev/claude-skill-garden)
 - [Garden MCP Server](https://github.com/avlihachev/mcp-garden)
-- [Garden Bot](https://github.com/avlihachev/garden-bot)
+- [Garden Agent](https://github.com/avlihachev/garden-agent)
 
 ## Next: Building a Skill
 

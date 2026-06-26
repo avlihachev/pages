@@ -102,7 +102,7 @@ If you can clearly describe what you want, you can build it. The bottleneck is c
 **Source code:**
 - [Garden Skill](https://github.com/avlihachev/claude-skill-garden)
 - [Garden MCP Server](https://github.com/avlihachev/mcp-garden)
-- [Garden Bot](https://github.com/avlihachev/garden-bot)
+- [Garden Agent](https://github.com/avlihachev/garden-agent)
 
 **Official docs:**
 - [Claude Code documentation](https://docs.anthropic.com/en/docs/claude-code)

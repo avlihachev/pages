@@ -45,4 +45,4 @@ Each module adds a layer. By the end, you have a fully autonomous agent.
 
 - [Garden Skill](https://github.com/avlihachev/claude-skill-garden)
 - [Garden MCP Server](https://github.com/avlihachev/mcp-garden)
-- [Garden Bot](https://github.com/avlihachev/garden-bot)
+- [Garden Agent](https://github.com/avlihachev/garden-agent)
