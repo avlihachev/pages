@@ -245,3 +245,7 @@ In [Module 3](/courses/claude-code-garden/03-mcp/) we fix this by giving Claude 
 [Garden Skill on GitHub](https://github.com/avlihachev/claude-skill-garden)
 
 <!-- {{< youtube VIDEO_ID_HERE >}} -->
+
+---
+
+*This course is free. If you would rather not build it yourself, the same stack is delivered as [fixed-price agent packages](https://dev.innalab.com/): public prices, written scope, no sales calls.*

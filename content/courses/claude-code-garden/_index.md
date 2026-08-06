@@ -46,3 +46,7 @@ Each module adds a layer. By the end, you have a fully autonomous agent.
 - [Garden Skill](https://github.com/avlihachev/claude-skill-garden)
 - [Garden MCP Server](https://github.com/avlihachev/mcp-garden)
 - [Garden Agent](https://github.com/avlihachev/garden-agent)
+
+---
+
+*This course is free. If you would rather not build it yourself, the same stack is delivered as [fixed-price agent packages](https://dev.innalab.com/): public prices, written scope, no sales calls.*

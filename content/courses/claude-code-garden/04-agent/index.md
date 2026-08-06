@@ -176,3 +176,7 @@ The pattern (skill for knowledge, MCP for data, agent for autonomy) isn't specif
 - [Garden Agent](https://github.com/avlihachev/garden-agent)
 
 <!-- {{< youtube VIDEO_ID_HERE >}} -->
+
+---
+
+*This course is free. If you would rather not build it yourself, the same stack is delivered as [fixed-price agent packages](https://dev.innalab.com/): public prices, written scope, no sales calls.*

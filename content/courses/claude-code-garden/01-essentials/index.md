@@ -167,3 +167,7 @@ You now know enough about Claude Code to build real things with it. The rest of 
 Every module uses the same workflow: plan mode, review-approve, iterate.
 
 <!-- {{< youtube VIDEO_ID_HERE >}} -->
+
+---
+
+*This course is free. If you would rather not build it yourself, the same stack is delivered as [fixed-price agent packages](https://dev.innalab.com/): public prices, written scope, no sales calls.*

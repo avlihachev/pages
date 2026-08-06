@@ -122,3 +122,7 @@ Everything is open source:
 ## Next: Building a Skill
 
 [Module 2](/courses/claude-code-garden/02-skill/) starts with the foundation. You'll create a skill that turns Claude from a general-purpose assistant into a domain expert. Fastest way to see what Claude Code can really do.
+
+---
+
+*This course is free. If you would rather not build it yourself, the same stack is delivered as [fixed-price agent packages](https://dev.innalab.com/): public prices, written scope, no sales calls.*

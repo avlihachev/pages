@@ -169,3 +169,7 @@ In [Module 4](/courses/claude-code-garden/04-agent/) we add the missing piece: a
 [Garden MCP Server on GitHub](https://github.com/avlihachev/mcp-garden)
 
 <!-- {{< youtube VIDEO_ID_HERE >}} -->
+
+---
+
+*This course is free. If you would rather not build it yourself, the same stack is delivered as [fixed-price agent packages](https://dev.innalab.com/): public prices, written scope, no sales calls.*

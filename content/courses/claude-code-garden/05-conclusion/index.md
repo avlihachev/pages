@@ -121,3 +121,7 @@ This course covers the foundation. Possible directions:
 If you build something using this pattern, I'd love to hear about it. Tag me on [X](https://twitter.com/avlihachev) or [Threads](https://threads.net/@lihachev).
 
 <!-- {{< youtube VIDEO_ID_HERE >}} -->
+
+---
+
+*This course is free. If you would rather not build it yourself, the same stack is delivered as [fixed-price agent packages](https://dev.innalab.com/): public prices, written scope, no sales calls.*
