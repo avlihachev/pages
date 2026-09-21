@@ -190,9 +190,9 @@ MCP tool tests are live integration tests against real government APIs. No mocks
 
 Real-API tests are slow and flaky. They also catch the bugs that matter — schema drift, auth changes, 500s on quiet params. For a project whose entire value depends on three external APIs behaving consistently, mocks would have been lying to me.
 
-## Live Demo
+## Status
 
-Live at [metsa.innalab.com](https://metsa.innalab.com). Try `543-411-6-175` — 22.8 ha in Nurmijärvi, mixed pine/spruce with several Metsäkeskus cutting recommendations on file.
+The hosted demo is offline. The write-up below describes what it did and how, from the version that ran on `543-411-6-175`, 22.8 ha in Nurmijärvi, mixed pine and spruce with several Metsäkeskus cutting recommendations on file.
 
 Built as part of [AI Agent Development practice](https://dev.innalab.com).
 
