@@ -12,7 +12,7 @@ Hi, I’m **Aleksandr Likhachev** — a software developer based in **Kokkola, F
 
 After a long career leading IT infrastructure and operations, I transitioned into hands-on software development. Now I build **production AI agents** using Claude Agent SDK and MCP — autonomous systems that reason, use tools, and solve real business problems.
 
-I also offer custom AI agent development for businesses at [innalab.com](https://dev.innalab.com).
+In 2026 I wrote the production half of that job down as a course and a book: [Mum, I wanna be an AI Engineer](https://factory.lihachev.pro) — inference economics, enforced harnesses, evals, observability, retrieval, security and serving, with graded exercises and a tutor that never hands out the solution. The [book edition](/projects/mum-i-wanna-be-an-ai-engineer/) is on Amazon.
 
 ---
 
@@ -23,6 +23,7 @@ I design and build backend systems, data-centric applications, and AI agents usi
 Key areas of work:
 
 - AI agent development (Claude Agent SDK, MCP servers, autonomous pipelines)
+- Agent harnesses for coding work: rules, hooks, review and verification gates, evals
 - Backend systems in Go and TypeScript
 - Database design and optimization (PostgreSQL, SQLite)
 - DevOps & infrastructure (Docker, Fly.io, GitHub Actions)
@@ -66,7 +67,7 @@ Earlier roles include:
 
 ## Skills & Tools
 
-- **AI & Agents:** Claude Agent SDK, MCP, Anthropic API, Telegram Bot API
+- **AI & Agents:** Claude Agent SDK, Claude Code harnesses, MCP, Anthropic API, evals
 - **Programming:** Go, TypeScript, Python, SQL
 - **Databases:** PostgreSQL, SQLite
 - **Infrastructure:** Docker, Fly.io, GitHub Actions, Cloudflare

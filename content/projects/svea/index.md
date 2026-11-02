@@ -27,7 +27,7 @@ ShowReadingTime: true
 
 ## 1. Overview
 
-[Svenska Verb](https://svea.fly.dev/)
+Svenska Verb (the hosted instance is offline; the write-up stays).
 
 This app is a focused, offline‑capable Swedish verb learning tool. It combines a lean Node.js backend (synchronization + licensing + snapshot generation) with a Vite/TypeScript frontend built entirely from custom Web Components—no heavyweight SPA framework. Data flows through a snapshot/verification pipeline backed by SQLite for determinism and easy recovery.
 

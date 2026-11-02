@@ -193,7 +193,3 @@ Real-API tests are slow and flaky. They also catch the bugs that matter — sche
 ## Status
 
 The hosted demo is offline. The write-up below describes what it did and how, from the version that ran on `543-411-6-175`, 22.8 ha in Nurmijärvi, mixed pine and spruce with several Metsäkeskus cutting recommendations on file.
-
-Built as part of [AI Agent Development practice](https://dev.innalab.com).
-
-Source on [GitHub](https://github.com/avlihachev/metsa).

@@ -1,4 +1,4 @@
-baseURL: "http://lihachev.pro/"
+baseURL: "https://lihachev.pro/"
 languageCode: "en-us"
 title: "Aleksandr Likhachev"
 theme: "PaperMod"
@@ -33,7 +33,6 @@ params:
   ShowCodeCopyButtons: true
   ShowRssButtonInSectionTermList: true
   ShowToc: true
-  images: ["papermod-cover.png"]
 
   profileMode:
     enabled: true
@@ -55,10 +54,10 @@ params:
       url: "https://twitter.com/avlihachev"
     - name: instagram
       url: "https://instagram.com/lihachev"
+    - name: youtube
+      url: "https://www.youtube.com/@avlihachev"
     - name: linkedin
       url: "https://www.linkedin.com/in/aleksandr-likhachev-b893468"
-    - name: facebook
-      url: "https://facebook.com/lihachev"
 
 assets:
   disableHLJS: true

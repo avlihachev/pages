@@ -20,7 +20,6 @@ ShowReadingTime: true
 
 - **Try the Bot**: [@jordbrukbot](https://t.me/jordbrukbot) on Telegram
 - **Web Interface**: [garden-weather-bot.fly.dev](https://garden-weather-bot.fly.dev/)
-- **Source Code**: [GitHub Repository](https://github.com/avlihachev/garden_bot)
 
 ### Live Status Monitor
 
@@ -165,11 +164,7 @@ Garden Bot automatically sends personalized notifications based on:
 - Weather data caching
 - Optimized API calls
 
-## Source Code & Project Structure
-
-Open source project on GitHub: [github.com/avlihachev/garden_bot](https://github.com/avlihachev/garden_bot)
-
-### Project Structure
+## Project Structure
 
 ```
 garden_bot/

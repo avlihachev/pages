@@ -56,6 +56,4 @@ The agent's data comes from a dedicated MCP server with 7 tools:
 
 Each tool returns structured data the agent can reason about — not raw numbers, but context-rich responses with thresholds and recommendations.
 
-Built as part of [AI Agent Development practice](https://dev.innalab.com).
-
 Source on [GitHub](https://github.com/avlihachev/garden-agent).

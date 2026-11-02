@@ -107,7 +107,7 @@ If you can clearly describe what you want, you can build it. The bottleneck is c
 **Official docs:**
 - [Claude Code documentation](https://docs.anthropic.com/en/docs/claude-code)
 - [MCP specification](https://modelcontextprotocol.io/)
-- [Agent SDK](https://github.com/anthropics/claude-code/tree/main/packages/claude-agent-sdk)
+- [Agent SDK](https://code.claude.com/docs/en/agent-sdk/overview)
 
 ## What's Next
 

@@ -73,8 +73,6 @@ Tradeoffs:
 
 This was not the deployment I planned. It's the deployment that worked.
 
-## Live Demo
+## Status
 
-Pulse is live as a demo on [dev.innalab.com/demos/pulse](https://dev.innalab.com/demos/pulse). Built as part of [AI Agent Development practice](https://dev.innalab.com).
-
-Source on [GitHub](https://github.com/avlihachev/pulse).
+The hosted demo is offline; the write-up above describes the version that ran.

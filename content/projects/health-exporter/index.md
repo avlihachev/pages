@@ -46,7 +46,3 @@ Ask Claude natural questions: "Compare my running pace this month vs last month.
 A single monolithic API endpoint would work for simple queries. But health data has too many domains — asking about sleep patterns requires different parameters than querying workout history. MCP's tool model lets each domain expose its own interface with typed parameters. Claude picks the right tool based on the question.
 
 17 tools sounds like a lot. In practice each tool is narrow and well-defined — `query_workouts`, `query_heart_rate`, `query_sleep`, `get_nutrition_summary`, etc. Claude rarely needs more than 2-3 per question.
-
-Built as part of [AI Agent Development practice](https://dev.innalab.com).
-
-Source on [GitHub](https://github.com/avlihachev/health-exporter).
